@@ -15,17 +15,19 @@ class MiningActivity {
         this.emissionFactor = emissionFactor;
     }
 
+    // here we calculate emissions
     public double calculateEmission() {
         return fuelConsumed * emissionFactor;
     }
 
+    // dispalying the information
     public void displayInfo() {
         System.out.printf("%-10s %-15s %-10.2f %-10.2f %-10.2f\n",
                 mineID, equipment, fuelConsumed, emissionFactor, calculateEmission());
     }
 }
 
-// Subclasses (optional override)
+// Subclasses for specific mining activities (optional override)
 class Excavation extends MiningActivity {
     public Excavation(String mineID, String equipment, double fuelConsumed, double emissionFactor) {
         super(mineID, equipment, fuelConsumed, emissionFactor);
